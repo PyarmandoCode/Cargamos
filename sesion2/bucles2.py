@@ -57,26 +57,67 @@ while.Cuando el bucle termina cuando sucede un valor True
 #             break
 
 
-import random
-numero_secreto=random.randint(1,100)
-intentos=0
-while True:
-    numero=int(input("Cual es el numero secreto?"))
-    intentos=intentos+1
-    if numero==numero_secreto:
-        print("Acertastes!!!!!")
-        print(f'Numero de Intentos {intentos}')
-        break
-    else:
-        if numero_secreto>numero:
-            print(f'El Numero secreto es mayor que {numero}')
-        else:
-            print(f'El Numero secreto es menor que {numero}')    
+# import random
+# numero_secreto=random.randint(1,100)
+# intentos=0
+# while True:
+#     numero=int(input("Cual es el numero secreto?"))
+#     intentos=intentos+1
+#     if numero==numero_secreto:
+#         print("Acertastes!!!!!")
+#         print(f'Numero de Intentos {intentos}')
+#         break
+#     else:
+#         if numero_secreto>numero:
+#             print(f'El Numero secreto es mayor que {numero}')
+#         else:
+#             print(f'El Numero secreto es menor que {numero}')    
 
 #Challenger 1
 # Escribir un programa  que solicte ingresar 10 notas de alumnos y nos informe
 # cuantos tienes notas mayores  o iguales a 17 y cuantos menores   
 # Utilzar while       
+
+
+# notas_mayores_17=0
+# notas_menores_17=0
+# i=1
+# while i<=10:
+#     notas=float(input(f'Ingrese nota {i}:'))
+#     if notas>=17:
+#         notas_mayores_17=notas_mayores_17+1
+#     else:
+#         notas_menores_17=notas_menores_17+1
+#     i +=1
+# print(f'La Cantidad de estudiantes mayores a 17 en su nota {notas_mayores_17}')
+# print(f'La Cantidad de estudiantes menores a 17 en su nota {notas_menores_17}')
+
+#Challenger2
+#Hacer un programa que simule lo que debo pagar en una tienda online
+#Me debe pedir el nombre del producto , su precio y  cantidad
+#Podemos hacer "n" compras hasta que yo le indique en el mensaje desea seguir
+#comprando(S/N)
+
+sumtotal=0
+while True:
+    producto=input("Ingrese el producto a comprar:")
+    precio=float(input("Ingrese el precio del producto:"))
+    cantidad=int(input("Ingrese la cantidad a comprar:"))
+    subtotal=precio*cantidad
+    #Acumula todas las compras realizadas
+    #Todo lo que esta en la cesta del carrito
+    sumtotal=sumtotal+subtotal
+    msj=input("Deseas Seguir comprando<S/N>:")
+    if msj.upper() =="N":
+        print(f'Total a pagar {sumtotal}')
+        break
+
+
+
+
+
+
+
 
 
 
