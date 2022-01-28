@@ -30,12 +30,32 @@ Set {}
  
 
 #Realizar un programa que me permita añadir 5 elementos a una lista de cursos
-cursos=[] #Inicializar la Lista
-for item in range(1,5):
-    nuevo_curso=input(f'Ingrese el curso {item}') # Ingreso los nuevos cursos
-    cursos.append(nuevo_curso) #Añadiendo a la Lista
-print("Mostrando los elementos de la Lista")    
-print(cursos) # Mostrando los elementos de la lista   
+# cursos=[] #Inicializar la Lista
+# for item in range(1,5):
+#     nuevo_curso=input(f'Ingrese el curso {item}') # Ingreso los nuevos cursos
+#     cursos.append(nuevo_curso) #Añadiendo a la Lista
+# print("Mostrando los elementos de la Lista")    
+# print(cursos) # Mostrando los elementos de la lista   
+
+#Crear un programa que permita llenar una lista de Invitados para la fiesta
+#De Armando REQUSITO "Traer Regalo"
+
+msg=""
+lista_invitados=[]
+while True:
+    invitado=input("Ingrese el Nombre del Invitado:")
+    regalo=input("¿Ha Traido Regalo?<S/N>:")
+    if regalo.upper() == "S":
+        lista_invitados.append(invitado)        
+    msg=input("Desea agregar otro invitado:<S/N>:")
+    if msg.upper()=="N":
+        break
+print("Lista de Invitados")    
+print(f'Lista de Invitados{lista_invitados}')   
+
+
+
+
 
 
 
