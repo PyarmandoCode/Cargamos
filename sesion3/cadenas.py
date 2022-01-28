@@ -22,7 +22,7 @@ cadena2=cadena.split(",") #Dividir una cadena en Subcadenas
 #print(cadena2[0])
 mensaje="python manejas diferentes python funciones de cadena python"
 #print(mensaje.capitalize())
-#print(mensaje.count("python")) #Contabiliza el numero de ocurrencias de una subcadena
+print (mensaje.count("python")) #Contabiliza el numero de ocurrencias de una subcadena
 habilidades="Los Lenguajes que mas he aprendido son Javascript y PYTHON"
 #print(habilidades.find("javascript")) #Busqueda de Cadenas
 
