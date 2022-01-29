@@ -18,14 +18,27 @@ def buscar_empleado(bd):
     if existe == False:
         print("El Empleado no existe")
 
-# def suma_sueldos_area(bd):
-#     area=input("Ingrese el Area a totalizar el sueldo:")
-#     "sistemas"
+def suma_sueldos_area(bd):
+    existe=False
+    suma=0
+    try:
+        area_buscar=input("Ingrese el Area a totalizar el sueldo:")
+        for item in bd:
+            if area_buscar == item['area']:
+                #Acumulando el sueldo del area
+                suma=suma+item["sueldo"]
+                existe=True
+                break
+        #Se va a ejecutar cuando el area no exista    
+        if existe == False:
+            print("El Area no existe")   
+        #Totalizar los sueldos por area     
+        print(f'El Total de la planilla del Area {area_buscar} es {suma}')  
+    except:
+        print("Ha ocurrido un error vuelva a intentarlo")          
 
-#     print("El Total de la planilla del Area {sistemas} es {15800}")        
 
-
-buscar_empleado(empleados)
+suma_sueldos_area(empleados)
 
 
 
