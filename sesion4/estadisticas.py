@@ -28,7 +28,6 @@ def suma_sueldos_area(bd):
                 #Acumulando el sueldo del area
                 suma=suma+item["sueldo"]
                 existe=True
-                break
         #Se va a ejecutar cuando el area no exista    
         if existe == False:
             print("El Area no existe")   
