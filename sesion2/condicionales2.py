@@ -33,7 +33,7 @@ if respuesta:
     resultado=" Reune las caracteristicas para el puesto"
 else:
     resultado=" No Reunes las caracteristicas para el puesto"
-print(f'El Empleado con codigo {codigo}' + resultado)        
+print(f'El Empleado con codigo {codigo}' + resultado)
 
 
 

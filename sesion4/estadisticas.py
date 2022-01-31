@@ -11,7 +11,7 @@ def buscar_empleado(bd):
     cod_emp=input("Ingrese el codigo del empleado:")
     for item in bd:
         if cod_emp ==  item['codigo']:
-            print(f"El Sueldo del empleado {item['nombre']} " 
+            print(f"El Sueldo del empleado {item['nombre']} "
              + f"{item['apellido']} es {item['sueldo']}")
             existe=True
             break
@@ -30,11 +30,11 @@ def suma_sueldos_area(bd):
                 existe=True
         #Se va a ejecutar cuando el area no exista    
         if existe == False:
-            print("El Area no existe")   
+            print("El Area no existe")
         #Totalizar los sueldos por area     
-        print(f'El Total de la planilla del Area {area_buscar} es {suma}')  
+        print(f'El Total de la planilla del Area {area_buscar} es {suma}')
     except:
-        print("Ha ocurrido un error vuelva a intentarlo")          
+        print("Ha ocurrido un error vuelva a intentarlo")
 
 
 suma_sueldos_area(empleados)

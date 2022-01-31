@@ -43,8 +43,7 @@ for item in clientes:
     if (cuenta==item['cuenta']):
         print('{} tu  saldo actual es {}'.format(item['apellido'],item['saldo']))
         break
-   
-    
+
 
 
 
