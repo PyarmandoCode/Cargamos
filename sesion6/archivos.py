@@ -14,4 +14,23 @@ with open('sesion6/cargamos.csv','r') as data_cargamos:
     print(lista_estudiantes)
     
     
+#todo indicadeores
+#todo alumnos por curso
+
+def cursos_alumnos(estudiantes,curso_param):
+    """
+    todo Esta Funcion me permite filtar a los alumnos por curso
+    Args:
+       ? estudiantes ([type]): "Es una Lista donde se almacena la informacion del curso"
+       ! curso_param ([type]): "Es el filtro que se va aplicar de acuerdo que queremos mostrar"
+    """
+    estudiantes_curso=[]
+    for estudiante,curso in estudiantes:
+        if curso==curso_param:
+            estudiantes_curso.append((estudiante,curso))
+    return estudiantes_curso
+        
+        
+
+
 
