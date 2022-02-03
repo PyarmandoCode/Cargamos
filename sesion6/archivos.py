@@ -6,31 +6,22 @@ Es un formato muy comun para Data Sciencie
 """
 import csv
 #todo esto me permite abrir el archivo en la variable asignada "data_cargamos"
-with open('sesion6/cargamos.csv','r') as data_cargamos:
-    #!Leer el archivo linea por linea
-    csv_leer=csv.reader(data_cargamos)
-    #? Convirtiendo o Cast el archivo a un coleccion de tipo List
-    lista_estudiantes=list(csv_leer)
-    print(lista_estudiantes)
-    
-    
-#todo indicadeores
-#todo alumnos por curso
 
+def data_alumnos_csv():
+    with open('sesion6/cargamos.csv','r') as data_cargamos:
+        csv_leer=csv.reader(data_cargamos,delimiter=";")
+        lista_estudiantes=list(csv_leer)
+        return lista_estudiantes
+        
 def cursos_alumnos(estudiantes,curso_param):
-    """
-    todo Esta Funcion me permite filtar a los alumnos por curso
-    Args:
-       ? estudiantes ([type]): "Es una Lista donde se almacena la informacion del curso"
-       ! curso_param ([type]): "Es el filtro que se va aplicar de acuerdo que queremos mostrar"
-    """
     estudiantes_curso=[]
-    for estudiante,curso in estudiantes:
-        if curso==curso_param:
-            estudiantes_curso.append((estudiante,curso))
+    for CODIGO,NOMBRE,APELLIDOS,CURSO,P1,P2,P3,PRO in estudiantes:
+        if CURSO==curso_param:
+            estudiantes_curso.append((NOMBRE,CURSO))
     return estudiantes_curso
-        
-        
+
+curso=input("Ingrese el curso a mostrar sus estudiantes:")        
+print(cursos_alumnos(data_alumnos_csv(),curso))       
 
 
 
