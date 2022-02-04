@@ -12,13 +12,7 @@ def data_alumnos_csv():
         csv_leer=csv.reader(data_cargamos)
         lista_estudiantes=list(csv_leer)
         return lista_estudiantes
-    
-def data_valores_csv():
-    with open('sesion6/valores.csv','r') as data_cargamos:
-        csv_leer=csv.reader(data_cargamos)
-        lista_estudiantes=list(csv_leer)
-        return lista_estudiantes    
-        
+            
 def cursos_alumnos(estudiantes,curso_param):
     estudiantes_curso=[]
     for CODIGO,NOMBRE,APELLIDOS,CURSO,P1,P2,P3,PRO in estudiantes:
@@ -29,19 +23,21 @@ def cursos_alumnos(estudiantes,curso_param):
 #curso=input("Ingrese el curso a mostrar sus estudiantes:")        
 #print(cursos_alumnos(data_alumnos_csv(),curso))       
 
+
 def nota_mayor_curso(estudiantes):
-    nota_mayor = 0
+    con=0
+    nota_mayor = 0.0
+    prom_alum=0
     for cod,nom,ape,cur,p1,p2,p2,pro in estudiantes:
-        prom_alum=int(pro)
-        if int(prom_alum) >= int(nota_mayor):
-            #todo intercambio de notas
-            nota_mayor = pro  #nota_mayor=15
+        if con > 0:
+            prom_alum = float(pro)
+            if float(prom_alum) >= float(nota_mayor):
+                #todo intercambio de notas
+                nota_mayor = pro  
+        con=con+1
     return nota_mayor
 
 
-nota_mayor_curso(data_alumnos_csv())
+print(nota_mayor_curso(data_alumnos_csv()))
 
-
-
-
-print(nota_mayor_curso(data_alumnos_csv())) 
+#print(nota_mayor_curso(data_alumnos_csv())) 
