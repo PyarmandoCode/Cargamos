@@ -36,7 +36,6 @@ gato.comer()
 raton.comer()
 
 
-
 # print(perro.nom)
 # print(perro.ed)
 # #todo me permite mostrar todos los atributos del objeto creado
