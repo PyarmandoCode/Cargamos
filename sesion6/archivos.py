@@ -39,5 +39,4 @@ def nota_mayor_curso(estudiantes):
 
 
 print(nota_mayor_curso(data_alumnos_csv()))
-
 #print(nota_mayor_curso(data_alumnos_csv())) 
