@@ -9,7 +9,8 @@
 <body>
     <h1>Listado de Alumnos de Cargamos-Back</h1>
     {% for item in alumnos %}
-        <li>{{item.nombre}} - {{item.apellido}}</li>
+        <li>{{item.nombre}} - {{item.apellido}}
+        <img src="{{item.picture}}" alt="{{item.nombre}}" width="200px" </li>
     {% endfor %}
 </body>
 </html>
