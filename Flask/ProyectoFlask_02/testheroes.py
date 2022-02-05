@@ -1,7 +1,3 @@
-from flask import Flask,render_template
-
-app=Flask(__name__)
-
 heroes_info= {
     'spiderman' :{
         "nombre":"Peter Parker",
@@ -26,13 +22,4 @@ heroes_info= {
   }
 }
 
-@app.route('/')
-def index():
-    return render_template('index.html')
-
-@app.route('/detalles/<key>')
-def detalles(key):
-    return render_template('heroe.html',heroe=heroes_info[key])
-    
-
-app.run(debug=True,port=8000)
+print(heroes_info['chapulin'])

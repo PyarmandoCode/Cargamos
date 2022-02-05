@@ -10,11 +10,18 @@
     <h1>{{heroe.nombre}}</h1>
  <ul>
      <li><strong>Nacionalidad:</strong>{{heroe.nacionalidad}}</li>
+      {% if heroe.nacionalidad == 'USA' %}
+         <li>Es Un Heroe de Habla Ingresa</li>
+      {% else %}
+         <li>Es Un Heroe de Habla Española</li>
+      {% endif %}      
      <li><strong>Poderes:</strong>{{heroe.poderes}}</li>
      <li><strong>Fecha:</strong>{{heroe.fecha}}</li>
  </ul> 
    <div>
        <img src="{{heroe.picture}}" width="300px">
    </div>  
+
+   <p><a href="{{url_for('index')}}">Index</a></p>
 </body>
 </html>
