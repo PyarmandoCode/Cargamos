@@ -94,13 +94,23 @@ values('C12','ingrid','guerrero',25,'1996/02/9','guatemala',True);
 Alter Table alumnos 
 add codgrupo varchar(3);
 
-/*Clave Foranea es un campo dentro de la tabla cuyos valores hacen referencia
-a claves primarias en otra tabla */
-
-
 
 /*Eliminar la Base de datos 
 drop database bdcargamos; */
+
+/*Clave Foranea es un campo dentro de la tabla cuyos valores hacen referencia
+a claves primarias en otra tabla 
+uno - muchos
+uno -uno
+muchos - muchos
+*/
+
+ALTER TABLE alumnos add constraint fk_grupo foreign key(codgrupo)
+references grupos(codgrupo)
+
+
+
+
 
 
 
