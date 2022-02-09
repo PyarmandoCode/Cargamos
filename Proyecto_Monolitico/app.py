@@ -1,12 +1,26 @@
 from flask import Flask,render_template
 from flask_sqlalchemy import SQLAlchemy
 
-
-app=Flask(__name__)
-
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:cargamos2022@localhost/bdcargamos'
+
+#todo conectado a la base de datos de MYSQL
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:@localhost/bdcargamos'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 db = SQLAlchemy(app)
+
+#todo creando el modelo de productos que se convertira en una tabla
+#todo este proceso se llama migracion
+
+class Productos(db.Model):
+    id=db.Column(db.Integer,primary_key=True)
+    nombre_producto=db.Column(db.Text)
+    precio=db.Column(db.Integer)
+    state=db.Column(db.Boolean,default=True)
+    
+#todo creando los objetos de Base de datos    
+db.create_all()    
+    
+
 
 @app.route('/')
 def index():
