@@ -24,8 +24,11 @@ db.create_all()
 
 @app.route('/')
 def index():
+    #todo Select * from productos
+    #todo queryset - motor de consultas
+    productos=Productos.query.all()
     template_name="index.html"
-    return render_template(template_name)
+    return render_template(template_name,prod=productos)
 
 
 app.run(debug=True)    

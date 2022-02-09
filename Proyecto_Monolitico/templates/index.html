@@ -29,17 +29,17 @@
 			
                 <div class="speciality wow fadeIn" data-wow-delay="0.6s">
 
-
+              {% for item in prod %}
 	             <div class="spe-prods">
 					<div class="mainbox">
-						<h3>Special 1</h3>
+						<h3>{{item.nombre_producto}}</h3>
 						
                         <img class="rotprod" src="{{url_for('static',filename='img/donut.png')}}" alt="">
 					</div>
 					<div class="price-big">
 						<div>
 							<div class="floatting-price">
-								<h3>$10</h3>
+								<h3>${{item.precio}}</h3>
 							</div>
 							<div class="month">
 								<p>/ piece</p>
@@ -50,47 +50,10 @@
 						</div>
 					</div>
 				</div>
+				{% endfor %}
 
                 
-			<div class="spe-prods">
-					<div class="mainbox">
-						<h3>Special 2</h3>
-                        <img class="rotprod"  src="{{url_for('static',filename='img/donut.png')}}" alt="">
-					</div>
-				<div class="price-big">
-					<div>
-						<div class="floatting-price">
-							<h3>$30</h3>
-						</div>
-						<div class="month">
-							<p> / 6 piece</p>
-						</div>
-						
-					</div>
-					<div class="ordersection">
-						<a href="#" class="buybtn">Order</a>
-					</div>
-				</div>
-			</div>
-				<div class="spe-prods">
-					<div class="mainbox">
-						<h3>Special 3</h3>
-                        <img class="rotprod" src="{{url_for('static',filename='img/donut.png')}}" alt="">
-					</div>
-					<div class="price-big">
-					<div>
-						<div class="floatting-price">
-							<h3>$60</h3>
-						</div>
-						<div class="month">
-							<p> / Dozen</p>
-						</div>
-					</div>
-						<div class="ordersection">
-							<a href="#" class="buybtn">Order</a>
-						</div>
-					</div>
-				</div>
+				
               </div>
            </div>   
          </div>
