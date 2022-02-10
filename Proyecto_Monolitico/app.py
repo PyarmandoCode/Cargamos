@@ -16,6 +16,7 @@ class Productos(db.Model):
     nombre_producto=db.Column(db.Text)
     precio=db.Column(db.Integer)
     state=db.Column(db.Boolean,default=True)
+    picture=db.Column(db.Text)
     
 #todo creando los objetos de Base de datos    
 db.create_all()    
