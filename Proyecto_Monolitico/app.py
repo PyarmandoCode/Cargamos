@@ -31,6 +31,12 @@ def index():
     template_name="index.html"
     return render_template(template_name,prod=productos)
 
+@app.route('/admin')
+def administrador():
+    template_name="administrador.html"
+    return render_template(template_name)
+
+
 
 app.run(debug=True)    
 
