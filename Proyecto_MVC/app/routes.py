@@ -47,7 +47,15 @@ def eliminar(id):
             return redirect('/')
     return "termino la eliminacion"    
             
-    
+@app.route('/actualizar/<int:id>')
+def actualizar(id):
+    template_name="actualizar.html"
+    if not id or id !=0:
+        grupo=Grupos.query.get(id)
+        if grupo:
+            return render_template(template_name,grupo=grupo)
+    return "cargando la nueva vista o template"    
+            
         
         
 
