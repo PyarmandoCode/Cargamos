@@ -24,6 +24,7 @@ def agregar():
             #todo se agregan los datos del formulario a la clase
             grupos=Grupos(nombre_grupo=nombre_grupo,estado=estado)
             #todo se agrega a la tabla de mysql
+            #insert into grupos() values()
             db.session.add(grupos)
             #todo commit insertar los valores a la tabla
             db.session.commit()
@@ -32,7 +33,21 @@ def agregar():
         return "termino la grabacion"
             
             
-        
+@app.route('/eliminar/<int:id>')   
+def eliminar(id):
+    if not id or id !=0:
+        #todo select * from where id=id
+        #todo ORM sqlachemy
+        #todo seleccionando el grupo que vas a eliminar
+        grupo=Grupos.query.get(id)
+        if grupo:
+            #todo eliminando el grupo
+            db.session.delete(grupo)
+            db.session.commit()
+            return redirect('/')
+    return "termino la eliminacion"    
+            
+    
         
         
 
