@@ -6,7 +6,3 @@ class Grupos(db.Model):
     estado=db.Column(db.Integer)
     
     
-class Alumnos(db.Model):
-    codalu=db.Column(db.String(3),primary_key=True)
-    nombre_alumno=db.Column(db.String(50))
-    apellido_alumno=db.Column(db.String(50))

@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <form action="" method="post">
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="grupo" placeholder="Grupo" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" name="descripcion" cols="100"
+                                      placeholder="Descripcion" required></textarea>
+                        </div>
+                        <button class="btn btn-primary" type="submit">
+                            Agregar
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <table class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Grupo</th>
+                    <th>Estado</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for item in grupos %}
+                <tr>
+                    <td>{{item.codgrupo}}</td>
+                    <td><strong>{{item.nombre_grupo}}</strong></td>
+                    <td>{{item.estado}}</td>
+                    <td>
+                        <a class="btn btn-danger"
+                           href="">
+                            Delete
+                        </a>
+                        <a class="btn btn-info"
+                           href="">
+                            Edit
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+{% endblock %}
