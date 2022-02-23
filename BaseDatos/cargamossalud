@@ -95,3 +95,34 @@ INSERT INTO pac_enf_trat (id_paciente,id_enfermedad,id_tra,costo) VALUES(109,3,2
 select * from pac_enf_trat
 
 
+select * from pacientes;
+select nombre,dni from pacientes;
+select * from pacientes where edad>42;
+select * from pacientes where dni='1111111';
+/* Between mostrar filtros en un rango de valores */
+select * from pacientes where edad between 18 and 45;
+/* Orderar por columnas desc */
+select * from pacientes order by nombre;
+select * from pacientes order by nombre desc;
+select * from pacientes where nombre='PEPE' or nombre='LUIS'
+/* In Filtar por varias condiciones */
+select * from pacientes where nombre in('PEPE','LUIS','PACO')
+select * from pacientes where dni='';
+select * from pacientes where dni IS NULL;
+/* Filtrar por un caracter es especifico % = todos */
+select * from pacientes where nombre LIKE 'P%'
+select * from pacientes where nombre LIKE '%A%'
+
+update pacientes set dni='' where id_paciente=null
+
+/* Ineer join  seleccionar filas de tablas que tengan relacion o un campo en comun */
+
+select * from pacientes;
+select * from enfermedades;
+select * from  pac_enf;
+
+
+select p.nombre,e.nombre from pacientes p inner join pac_enf pe  
+on p.id_paciente=pe.id_paciente inner join enfermedades e on pe.id_enfermedad=e.id_enfermedad
+
+
